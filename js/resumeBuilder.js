@@ -8,9 +8,22 @@ var bio = {
     "twitter" : "@edwja",
     "location" : "Des Moines, IA"
   },
-  "welcomeMessage" : "I am a happy programmer!",
-  "biopic" : "images/fry.jpg",
-  "skills" : [ "Ruby", "Python", "HTML5", "JavaScript" ],
+  "welcomeMessage" : "",
+  "biopic" : "images/ae.jpg",
+  "skills" : [
+    "Ruby",
+    "Python",
+    "HTML5",
+    "JavaScript",
+    "Perl",
+    "Java",
+    "C",
+    "Linux",
+    "Git",
+    "Unix",
+    "Rails",
+    "SQL"
+  ],
 
   "display" : function() {
     $("#header").prepend(HTMLheaderRole.replace("%data%", this.role));
@@ -38,8 +51,7 @@ var education = {
       "location" : "Medford, MA",
       "degree" : "Bachelor of Science",
       "majors" : [ "Computer Science" ],
-      "dates" : "1984-1986",
-      "graduated" : "1987",
+      "dates" : 1987,
       "url" : "http://www.tufts.edu"
     },
     {
@@ -47,8 +59,7 @@ var education = {
       "location" : "Ames, IA",
       "degree" : "Master of Science",
       "majors" : [ "Computer Science" ],
-      "dates" : "1987-1993",
-      "graduated" : "1993",
+      "dates" : 1993,
       "url" : "http://www.iastate.edu"
     }
   ],
@@ -56,7 +67,7 @@ var education = {
     {
       "title" : "Front-End Web Developer Nanodegree",
       "school" : "Udacity",
-      "dates" : "2015",
+      "dates" : 2015,
       "url" : "https://www.udacity.com"
     }
   ],
@@ -69,7 +80,7 @@ var education = {
       $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.location));
       school.majors.forEach(function(major) {
         $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", major));
-      })
+      });
     });
     $("#education").append(HTMLonlineClasses);
     this.onlineCourses.forEach(function(course) {
@@ -86,18 +97,32 @@ var education = {
 var work = {
   "jobs" : [
     {
-      "title" : "VP Administration",
+      "title" : "Vice President",
       "employer" : "Edwards Graphic Arts, Inc.",
       "dates" : "1999-Present",
       "location" : "Des Moines, IA",
-      "description" : "Accounting duties"
+      "description" : "Accounting, Administration, and MIS responsibilities."
     },
     {
       "title" : "Software Engineer",
       "employer" : "NewMonics Inc.",
       "dates" : "1996-1999",
       "location" : "Ames, IA",
-      "description" : "Software Development, QA"
+      "description" : "Software Development, Quality Assurance"
+    },
+    {
+      "title" : "Software Engineer",
+      "employer" : "Unix Integration Services",
+      "dates" : "1991-1996",
+      "location" : "Urbandale, IA",
+      "description" : "Software Development, Software Integration, and Product Manager"
+    },
+    {
+      "title" : "Instructor",
+      "employer" : "Iowa State University Computer Science Department",
+      "dates" : "1991",
+      "location" : "Ames, IA",
+      "description" : "Upperclass-level Compilers"
     }
   ],
   "display" : function() {
@@ -110,7 +135,7 @@ var work = {
       $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
       $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
       $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
-    })
+    });
   }
 };
 
@@ -121,6 +146,18 @@ var projects = {
       "dates" : "1991-1996",
       "description" : "Distributed Unix System Monitor",
       "images" : []
+    },
+    {
+      "title" : "File Distribution System",
+      "dates" : "1994",
+      "description" : "UUCP-based mainframe file distribution system",
+      "images" : []
+    },
+    {
+      "title" : "EGA Shipping",
+      "dates" : "2009-Present",
+      "description" : "Shipping hub integrating many shipping manifest systems with many manifest clients",
+      "images" : []
     }
   ],
   "display" : function() {
@@ -129,7 +166,7 @@ var projects = {
       $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", project.title));
       $(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
       $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project.description));
-    })
+    });
   }
 };
 
